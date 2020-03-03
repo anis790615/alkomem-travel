@@ -10,15 +10,22 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>Alkomem Travel</title>
       <style>
-        .caption h2,
+        .caption h3,
         .caption h5 {
           text-shadow: 2px 2px #757575 ;
+        }
+        .section-search input{
+          padding: 5px !important;
+          width: 90% !important;
+          font-size: 18px !important;
+          border: #f4f4f4 3px solid !important;
+
         }
       </style>
       
     </head>
 
-    <body>
+    <body id="#home" class="scrollspy">
       <!-- -----------Navbar -->
       <div class="navbar-fixed">
         <nav class="light-blue accent-4">
@@ -77,6 +84,20 @@
           </li>
         </ul>
       </section>
+      <!-- -----------------Search-------------------------------- -->
+      <section id="search" class="section section-search light-blue darken-4 white-text center-align scrollspy">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <h3>Find Your Destination</h3>
+              <div class="input-field">
+                <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder=" Amsterdam, The Netherlands">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
 
       <!--JavaScript at end of body for optimized loading-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -92,6 +113,20 @@
           height: 500,
           transition: 500,
           interval: 6000
+        });
+        // Autocomplete
+        const autocom = document.querySelector('.autocomplete');
+        M.Autocomplete.init(autocom, {
+          data: {
+            "Antalia": null,
+            "Barbados": null,
+            "Conpenhagen": null,
+            "London": null,
+            "Sanaa, Yemen": null,
+            "Maldives": null,
+            "Paris": null,
+            "Socotra": null
+          }
         });
       </script>
     </body>
